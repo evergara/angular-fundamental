@@ -1,0 +1,10 @@
+{
+  "env": {
+    "name": "Developer"
+  },
+  "baseAPI": "",
+  "subscriptionKey": "",
+  "appInsights": {
+    "instrumentationKey": ""
+  }
+}

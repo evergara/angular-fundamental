@@ -1,0 +1,10 @@
+{
+  "env": {
+    "name": "Production"
+  },
+  "baseAPI": "#{UrlApi}#/api/v1/",
+  "subscriptionKey": "#{SubscriptionKeyApi}#",
+  "appInsights": {
+    "instrumentationKey": "#{InstrumentationKey}#"
+  }
+}
