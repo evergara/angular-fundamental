@@ -1,0 +1,41 @@
+.container{
+    background-color: #e2ece9;
+    display: grid;
+    height: 400px;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-template-areas: 
+    "ele1 ele2 ele2"
+    "ele3 ele3 ele4"
+    "ele5 ele6 ele7";
+    place-content: center;
+    width: 400px;
+  }
+  .item:nth-child(1){
+    background-color: #757bc8;
+    grid-area: ele1;
+  }
+  .item:nth-child(2){
+    background-color: #8e94f2;
+    grid-area: ele2;
+  }
+  .item:nth-child(3){
+    background-color: #9fa0ff;
+    grid-area: ele3;
+  }
+  .item:nth-child(4){
+    background-color: #ada7ff;
+    grid-area: ele4;
+  }
+  .item:nth-child(5){
+    background-color: #bbadff;
+    grid-area: ele5;
+  }
+  .item:nth-child(6){
+    background-color: #cbb2fe;
+    grid-area: ele6;
+  }
+  .item:nth-child(7){
+    background-color: #dab6fc;
+    grid-area: ele7;
+  }

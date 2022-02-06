@@ -1,0 +1,226 @@
+/**
+.container {
+    border: 5px solid #920202;
+    background-color: #dd4f4a;
+    color: white;
+    display: grid;
+    grid-template-rows: 200px 200px 200px;
+    grid-auto-columns: 100px;
+    grid-auto-flow: column;
+    gap: 20px;
+}
+
+.item {
+    background-color: #72cb10;
+    border: 5px solid #fd9870;
+    font-size: 4rem;
+    display: grid;
+    justify-items: end;
+    align-items: end;
+}
+.item:nth-child(1), :nth-child(4){
+    background-color: greenyellow;
+}
+
+.item:nth-child(3), :nth-child(6){
+    background-color: #419f00;
+}
+
+.item span{
+    border: 5px solid #fff;
+    color: #fff;
+    font-weight: bold;
+    bottom: 0;
+    background-color: #337900;
+    text-align: center;
+    width: 50px;
+    justify-items: end;
+    align-items: end;
+
+}
+*/
+/**
+.container {
+  border: 5px solid #e1bee7;
+  background-color: #fff1ff;
+  display: grid;
+  grid-template-rows: 100px 100px 100px;
+  grid-auto-columns: 100px ;
+  grid-auto-flow: column;
+  gap: 15px;
+  height: 600px;
+  place-content: center;
+  //justify-content: center;
+  //align-content: center;
+    
+  
+}
+
+.container .item {
+  ///@debug: 5px solid #00bcd4;
+  font-size: 3rem;
+  display: grid;
+  place-content: end;
+}
+
+.container2 {
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-auto-rows: 100px;
+    gap: 15px;
+    height: 300px;
+    place-content: center;
+   //justify-content: center;
+   //align-content: center;
+    
+  }
+  
+  .container2 .item {
+    ///@debug: 5px solid #00bcd4;
+    font-size: 3rem;
+    display: grid;
+    place-content: end;
+  }
+
+.item {
+    background-color: #72cb10;
+  }
+
+.item:nth-child(1),
+:nth-child(4) {
+  background-color: greenyellow;
+}
+
+.item:nth-child(3),
+:nth-child(6) {
+  background-color: #419f00;
+}
+
+.item span {
+  border: 1px solid #fff;
+  padding: 5px;
+  color: #fff;
+  font-weight: bold;
+  background-color: #337900;
+}
+*/
+/**
+.container {
+    border: 5px solid rgb(252, 119, 119);
+    background-color: white;
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 75px 75px 75px;
+    place-content: center;
+}
+
+.item {
+    font-size: 2rem;
+}
+
+.item-1{
+    border: 5px solid rgb(245, 182, 182);
+    background-color: #ffeeff;
+    grid-column-start: 1 ;
+    grid-column-end: 4;
+
+}
+
+.item-2{
+    border: 5px solid rgb(212, 169, 169);
+    background-color: #c9b4c9;
+    grid-row: 2/4;
+}
+
+.item-3{
+    border: 5px solid rgb(100, 69, 69);
+    background-color: #3d343d;
+    grid-area:  2 /2 / 4/ 4 ;
+}
+
+*/
+/*
+.container {
+    border: 5px solid rgb(252, 119, 119);
+    background-color: white;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 80px 80px 80px 80px;
+    grid-template-areas: "header header header header"
+                         "side main main main"
+                         "side main main main"
+                         "footer footer footer footer"
+                         ;
+    place-content: center;
+}
+
+.item {
+    font-size: 2rem;
+}
+
+.item-1{
+    border: 5px solid rgb(245, 182, 182);
+    background-color: #ffeeff;
+    grid-area: header;
+}
+
+.item-2{
+    border: 5px solid rgb(212, 169, 169);
+    background-color: #c9b4c9;
+    grid-area: side;
+}
+
+.item-3{
+    border: 5px solid rgb(100, 69, 69);
+    background-color: #3d343d;
+    grid-area: main;
+}
+
+.item-4{
+    border: 5px solid rgb(100, 69, 69);
+    background-color: #3d343d;
+    grid-area: footer;
+}
+*/
+
+.container {
+    border: 5px solid #920202;
+    background-color: #dd4f4a;
+    color: white;
+    display: grid;
+    grid-template-rows: 200px 200px 200px;
+    grid-auto-columns: 100px;
+    grid-auto-flow: column;
+    gap: 20px;
+}
+
+.item {
+    background-color: #72cb10;
+    border: 5px solid #fd9870;
+    font-size: 4rem;
+    display: grid;
+    justify-items: end;
+    align-items: end;
+}
+.item:nth-child(1), :nth-child(4){
+    background-color: greenyellow;
+}
+
+.item:nth-child(3), :nth-child(6){
+    background-color: #419f00;
+}
+
+.item span{
+    border: 5px solid #fff;
+    color: #fff;
+    font-weight: bold;
+    bottom: 0;
+    background-color: #337900;
+    text-align: center;
+    width: 50px;
+    justify-items: end;
+    align-items: end;
+
+}
