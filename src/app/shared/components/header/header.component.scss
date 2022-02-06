@@ -1,0 +1,16 @@
+@import "../../../../assets/scss/modules/var";
+
+.fd-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+  width: 100%;
+  background-color: $dark-green-color;
+  padding-bottom: 1vh;
+  padding-top: 1vh;
+  &-title {
+    font-size: 20px;
+    color: $white-color;
+  }
+}
