@@ -5,6 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FeatureRoutingModule } from './feature-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ContadorComponent } from './contador/contador.component';
+import { HeroeComponent } from './heroes/heroe/heroe.component';
 
 
 
@@ -13,6 +14,7 @@ import { ContadorComponent } from './contador/contador.component';
   declarations: [
     HomeComponent,
     ContadorComponent,
+    HeroeComponent,
   ],
   imports: [
     CommonModule,
