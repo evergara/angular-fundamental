@@ -1,0 +1,13 @@
+<section>
+  <header>
+    <h2>{{ titulo }}</h2>
+    <p>
+      La base es: <strong>{{ base }}</strong>
+    </p>
+  </header>
+  <section>
+    <button (click)="acumular(base)">+{{ base }}</button>
+    <span>{{ contador }}</span>
+    <button (click)="acumular(-base)">-{{ base }}</button>
+  </section>
+</section>
