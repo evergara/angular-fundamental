@@ -6,6 +6,7 @@ import { FeatureRoutingModule } from './feature-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ContadorComponent } from './contador/contador.component';
 import { HeroeComponent } from './heroes/heroe/heroe.component';
+import { HeroeListComponent } from './heroes/heroe-list/heroe-list.component';
 
 
 
@@ -15,6 +16,7 @@ import { HeroeComponent } from './heroes/heroe/heroe.component';
     HomeComponent,
     ContadorComponent,
     HeroeComponent,
+    HeroeListComponent,
   ],
   imports: [
     CommonModule,
