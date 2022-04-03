@@ -1,1 +1,25 @@
-<p>heroe-list works!</p>
+<p>Listados de Heroes</p>
+<section>
+  <ul *ngIf="heroes">
+    <li *ngFor="let heroe of heroes">
+      {{ heroe.name }}
+    </li>
+  </ul>
+</section>
+
+<section *ngIf="heroesCopy.length > 0">
+  <hr />
+  <p>Listados de Heroes eliminado</p>
+  <ul *ngIf="heroesCopy">
+    <li *ngFor="let heroe of heroesCopy">
+      {{ heroe.name }}
+    </li>
+  </ul>
+  <button *ngIf="heroes.length == 0" (click)="restaurarHeroe()">
+    Restarar heroes
+  </button>
+</section>
+
+<button *ngIf="heroes.length > 0" (click)="deleteHeroe()">
+  Eliminar heroe
+</button>

@@ -9,12 +9,14 @@ export class ContadorComponent implements OnInit {
   private _titulo: string = 'Contador App';
   private _contador: number;
   private _base: number;
+  
   constructor() { 
     this._contador = 0;
     this._base = 10;
   }
 
   ngOnInit(): void {
+    this.contador = 0;
   }
 
   get titulo():string {
