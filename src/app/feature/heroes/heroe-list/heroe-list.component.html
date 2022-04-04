@@ -7,7 +7,7 @@
   </ul>
 </section>
 
-<section *ngIf="heroesCopy.length > 0">
+<section *ngIf="heroesCopy.length > 0; else noBorrado">
   <hr />
   <p>Listados de Heroes eliminado</p>
   <ul *ngIf="heroesCopy">
@@ -15,10 +15,15 @@
       {{ heroe.name }}
     </li>
   </ul>
+
   <button *ngIf="heroes.length == 0" (click)="restaurarHeroe()">
     Restarar heroes
   </button>
 </section>
+
+<ng-template #noBorrado>
+  <p>No se ha borrado ningun Heroe...</p>
+</ng-template>
 
 <button *ngIf="heroes.length > 0" (click)="deleteHeroe()">
   Eliminar heroe
