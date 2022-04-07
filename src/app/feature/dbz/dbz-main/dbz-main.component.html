@@ -1,0 +1,10 @@
+<h1>Dragon Ball Z</h1>
+<hr />
+<section class="row">
+  <article class="col">
+    <app-dbz-list [tranfer_characters]="characters"></app-dbz-list>
+  </article>
+  <article class="col">
+      <app-dbz-create [new_character]="characterForm" (emit_character)="add($event)"></app-dbz-create>
+  </article>
+</section>
