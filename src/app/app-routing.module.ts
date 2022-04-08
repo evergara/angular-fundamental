@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FeatureModule } from './feature/feature.module';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./feature/feature.module').then(mod => mod.FeatureModule),
-  }
+    loadChildren: () =>
+      import('./feature/gifs/gifs.module').then((mod) => mod.GifsModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
