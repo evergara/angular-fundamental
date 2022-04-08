@@ -1,1 +1,7 @@
-<p>todo-list works!</p>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let todo of todos; index as i ">
+    <app-todo [todo_transfer]="todo"
+    (deleteEventTodo)="deleteTodo($event, i)"
+  (updatedEventTodo)="updatedTodo($event, i)"></app-todo>
+  </li>
+</ul>

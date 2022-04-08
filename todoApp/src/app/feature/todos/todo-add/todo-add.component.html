@@ -1,1 +1,13 @@
-<p>todo-add works!</p>
+<article>
+  <div class="mb-3">
+    <label for="task" class="form-label">Tarea</label>
+    <input
+      type="text"
+      class="form-control"
+      id="task"
+      [(ngModel)]="task"
+      (keydown.enter)="createdTodo()"
+      placeholder="Ingrese una tarea"
+    />
+  </div>
+</article>

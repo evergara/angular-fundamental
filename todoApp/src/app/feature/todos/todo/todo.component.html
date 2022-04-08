@@ -1,1 +1,40 @@
-<p>todo works!</p>
+<article>
+  <div class="input-group mb-3">
+    <div class="input-group-text">
+      <input
+        class="form-check-input mt-0"
+        type="checkbox"
+        [checked]="todo.completed"
+        aria-label="Checkbox for following text input"
+        [(ngModel)]="todo.completed"
+        (change)="completedTodo()"
+      />
+    </div>
+    <input
+      type="text"
+      [disabled]="todo.completed"
+      class="form-control"
+      aria-label="Text input with checkbox"
+      value="{todo.task}"
+      [(ngModel)]="todo.task"
+    />
+    <button
+      *ngIf="!todo.completed"
+      class="btn btn-outline-secondary"
+      type="button"
+      id="button-addon2"
+      (click)="updatedTodo()"
+    >
+      <i class="fa fa-pencil-square-o fa-1x" aria-hidden="true"></i>
+    </button>
+    <button
+      *ngIf="!todo.completed"
+      class="btn btn-outline-secondary"
+      type="button"
+      id="button-addon2"
+      (click)="deleteTodo()"
+    >
+      <i class="fa fa-trash fa-1x" aria-hidden="true"></i>
+    </button>
+  </div>
+</article>
