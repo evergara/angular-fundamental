@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { DataAplicationService } from './data-aplication.service';
 
 @Injectable({
   providedIn: 'root',
@@ -7,8 +8,11 @@ export class HistoryService {
   private _searchHistories: string[];
   private SIZE_OF_HISTORY: number = 10;
 
-  constructor() {
-    this._searchHistories = [];
+  constructor(private dataAplicationService: DataAplicationService) {
+    let historial =
+      this.dataAplicationService.getLocalStorage('gifsHistorial') ||
+      JSON.stringify([]);
+    this._searchHistories = JSON.parse(historial.toString());
   }
 
   get histories(): string[] {
@@ -21,6 +25,10 @@ export class HistoryService {
     if (this.validateQuery(query)) {
       this._searchHistories.unshift(query);
       this.cutOfHistories();
+      this.saveLocalStorage(
+        'gifsHistorial',
+        JSON.stringify(this._searchHistories)
+      );
     }
 
     console.log(query);
@@ -37,5 +45,9 @@ export class HistoryService {
       0,
       this.SIZE_OF_HISTORY
     );
+  }
+
+  private saveLocalStorage(token: string, data: string): void {
+    this.dataAplicationService.saveLocalStorage(token, data);
   }
 }
