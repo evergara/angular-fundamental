@@ -14,6 +14,6 @@ export class SidebarComponent {
   }
 
   get queries(): string[] {
-    return this.historyService.histories;
+    return (this._queries = this.historyService.histories);
   }
 }
