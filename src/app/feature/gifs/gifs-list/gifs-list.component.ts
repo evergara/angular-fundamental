@@ -10,6 +10,6 @@ export class GifsListComponent {
   constructor(private giftsService: GifsService) {}
 
   get gifs() {
-    return this.giftsService.resultApi;
+    return this.giftsService.gitsResponse;
   }
 }
