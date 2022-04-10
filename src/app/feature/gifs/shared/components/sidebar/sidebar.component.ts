@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HistoryService } from '@core/services/history.service';
+import { GifsService } from '../../services/gifs.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,11 +10,18 @@ import { HistoryService } from '@core/services/history.service';
 export class SidebarComponent {
   private _queries: string[];
 
-  constructor(private historyService: HistoryService) {
+  constructor(
+    private historyService: HistoryService,
+    private gifsService: GifsService
+  ) {
     this._queries = [];
   }
 
   get queries(): string[] {
     return (this._queries = this.historyService.histories);
+  }
+
+  SearchGifs(query: string): void {
+    this.gifsService.buscarGif(query);
   }
 }

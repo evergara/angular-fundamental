@@ -6,9 +6,9 @@ import { GifsSearchComponent } from './gifs-search/gifs-search.component';
 import { GifsComponent } from './gifs.component';
 import { GifsListComponent } from './gifs-list/gifs-list.component';
 import { GifComponent } from './gif/gif.component';
-import { SharedModule } from 'src/app/shared/shared.module';
 import { GifsPageComponent } from './gifs-page/gifs-page.component';
 import { GifsHttpService } from './shared/services/gifs-http.service';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +17,10 @@ import { GifsHttpService } from './shared/services/gifs-http.service';
     GifsListComponent,
     GifComponent,
     GifsPageComponent,
+    SidebarComponent,
   ],
   exports: [GifsComponent],
-  imports: [CommonModule, GifsRoutingModule, SharedModule],
+  imports: [CommonModule, GifsRoutingModule],
   providers: [GifsHttpService],
 })
 export class GifsModule {}

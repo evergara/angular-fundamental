@@ -3,12 +3,12 @@
   <hr class="text-white" />
 
   <section class="list-group list-reset">
-    <a
-      href="#"
+    <button
       class="list-group-item list-group-item-action m-1"
       *ngFor="let query of queries"
+      (click)="SearchGifs(query)"
     >
       {{ query | titlecase }}
-    </a>
+    </button>
   </section>
 </section>
