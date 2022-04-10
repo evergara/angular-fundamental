@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PaisesComponent } from './paises.component';
 
-const PAISES_HOME = '/paises';
+const PAISES_HOME = 'paises';
 const routes: Routes = [
   {
     path: '',
