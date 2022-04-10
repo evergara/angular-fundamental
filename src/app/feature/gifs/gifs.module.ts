@@ -9,6 +9,7 @@ import { GifComponent } from './gif/gif.component';
 import { GifsPageComponent } from './gifs-page/gifs-page.component';
 import { GifsHttpService } from './shared/services/gifs-http.service';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import 'animate.css';
 
 @NgModule({
   declarations: [
