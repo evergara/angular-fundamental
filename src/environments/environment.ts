@@ -5,9 +5,9 @@
 export const environment = {
   production: false,
   name: 'Dev',
-  endpoint: 'https://api.giphy.com',
+  apiManagmentURL: 'https://api.giphy.com',
   apiManagmentKey: 'jM0X1H96fDbwQ4OUp5iUHAEtoSQv8SSX',
-  appVersion: '1',
+  appVersion: 'v1',
 };
 
 /*
