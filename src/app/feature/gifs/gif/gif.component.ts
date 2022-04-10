@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Git } from '../shared/interface/gits.interface';
 
 @Component({
   selector: 'app-gif',
   templateUrl: './gif.component.html',
-  styleUrls: ['./gif.component.scss']
+  styleUrls: ['./gif.component.scss'],
 })
-export class GifComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class GifComponent {
+  @Input('gif_transfer') gif!: Git;
+  constructor() {}
 }
