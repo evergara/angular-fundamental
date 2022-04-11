@@ -4,9 +4,9 @@
       <h2>Busquedas</h2>
       <hr />
       <ul class="list-group">
-        <li class="list-group-item">por país</li>
-        <li class="list-group-item">por region</li>
-        <li class="list-group-item">por capital</li>
+        <li class="list-group-item" [routerLink]="['/countries']" routerLinkActive="router-link-active" >por país</li>
+        <li class="list-group-item" [routerLink]="['/region']" routerLinkActive="router-link-active" >por region</li>
+        <li class="list-group-item" [routerLink]="['/region']" routerLinkActive="router-link-active" >por capital</li>
       </ul>
     </div>
     <div class="col-9">
