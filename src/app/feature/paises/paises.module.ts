@@ -18,6 +18,11 @@ import { SeeCountryComponent } from './pages/see-country/see-country.component';
     ByRegionComponent,
     SeeCountryComponent,
   ],
-  imports: [CommonModule, PaisesRoutingModule, SharedModule, FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    SharedModule,
+    PaisesRoutingModule,
+  ],
 })
 export class PaisesModule {}
