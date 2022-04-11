@@ -8,16 +8,22 @@ import { CountriesService } from '@feature/paises/shared/services/countries.serv
 })
 export class ByCountriesComponent {
   countryToSearch: string;
+  showNotification: boolean;
 
   constructor(private countriesService: CountriesService) {
     this.countryToSearch = '';
+    this.showNotification = false;
   }
 
   search(): void {
-    this.countriesService
-      .searchCountry(this.countryToSearch)
-      .subscribe((resp) => {
+    this.showNotification = false;
+    this.countriesService.searchCountry(this.countryToSearch).subscribe(
+      (resp) => {
         console.log(resp);
-      });
+      },
+      (err) => {
+        this.showNotification = true;
+      }
+    );
   }
 }

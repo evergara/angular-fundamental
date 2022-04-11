@@ -14,37 +14,43 @@
       </form>
     </article>
     <hr />
-    <div class="alert alert-danger d-flex align-items-center" role="alert">
+    <div
+      *ngIf="showNotification"
+      class="alert alert-danger d-flex align-items-center"
+      role="alert"
+    >
       <div>
         <i class="bi bi-window-sidebar"></i>
-        no se emcontro nada con esta busqueda
+        no se emcontro nada con esta busqueda <b>{{ countryToSearch }}</b>
       </div>
     </div>
   </div>
 </div>
 <div class="row">
   <div class="col">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Bandera</th>
-          <th>Nombre</th>
-          <th>Poblaciòn</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>123</td>
-          <td>Bandera</td>
-          <td>Colombia</td>
-          <td>422112252</td>
-          <td>
-            <a href="#"> ver pais ...</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <article *ngIf="!showNotification">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Bandera</th>
+            <th>Nombre</th>
+            <th>Poblaciòn</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>123</td>
+            <td>Bandera</td>
+            <td>Colombia</td>
+            <td>422112252</td>
+            <td>
+              <a href="#"> ver pais ...</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
   </div>
 </div>
