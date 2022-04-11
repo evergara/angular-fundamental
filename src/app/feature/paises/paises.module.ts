@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { SharedModule } from '../../shared/shared.module';
 import { PaisesRoutingModule } from './paises-routing.module';
@@ -17,6 +18,6 @@ import { SeeCountryComponent } from './pages/see-country/see-country.component';
     ByRegionComponent,
     SeeCountryComponent,
   ],
-  imports: [CommonModule, PaisesRoutingModule, SharedModule],
+  imports: [CommonModule, PaisesRoutingModule, SharedModule, FormsModule],
 })
 export class PaisesModule {}
