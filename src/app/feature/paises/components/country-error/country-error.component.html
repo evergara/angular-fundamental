@@ -1,0 +1,10 @@
+<div
+  *ngIf="isShow()"
+  class="alert alert-danger d-flex align-items-center"
+  role="alert"
+>
+  <div>
+    <i class="bi bi-window-sidebar"></i>
+    {{ notificationError?.message }} - <b> {{ notificationError?.value }}</b>
+  </div>
+</div>

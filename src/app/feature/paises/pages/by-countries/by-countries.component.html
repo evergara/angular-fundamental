@@ -1,19 +1,18 @@
 <div class="row">
   <div class="col">
+    <app-country-title-page [title]="title"></app-country-title-page>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
     <app-country-input
+      [placeholder_search]="'pais'"
       (onSearchEnter)="search($event)"
       (onDebounce)="suggestion($event)"
     ></app-country-input>
-    <div
-      *ngIf="showNotification"
-      class="alert alert-danger d-flex align-items-center"
-      role="alert"
-    >
-      <div>
-        <i class="bi bi-window-sidebar"></i>
-        no se emcontro nada con esta busqueda <b>{{ countryToSearch }}</b>
-      </div>
-    </div>
+    <app-country-error
+      [notificationError]="notificationError"
+    ></app-country-error>
   </div>
 </div>
 <div class="row" *ngIf="countries.length > 0">

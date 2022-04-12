@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Country } from '@feature/paises/shared/interfaces/county';
+import { NotificationError } from '@feature/paises/shared/interfaces/notificationerror';
 import { CountriesService } from '@feature/paises/shared/services/countries.service';
 
 @Component({
@@ -8,31 +9,42 @@ import { CountriesService } from '@feature/paises/shared/services/countries.serv
   styleUrls: ['./by-countries.component.scss'],
 })
 export class ByCountriesComponent {
+  title: string;
   countryToSearch: string;
-  showNotification: boolean;
   countries: Country[];
+  notificationError?: NotificationError;
 
   constructor(private countriesService: CountriesService) {
+    this.title = 'Pais';
     this.countryToSearch = '';
-    this.showNotification = false;
     this.countries = [];
   }
 
   search(term: string): void {
-    this.showNotification = false;
     this.countryToSearch = term;
+    this.fillNotificationError(false, '');
     this.countriesService.searchCountry(this.countryToSearch).subscribe(
       (countries) => {
         this.countries = countries;
       },
       (err) => {
-        this.showNotification = true;
+        this.fillNotificationError(true, this.countryToSearch);
+        this.countries = [];
       }
     );
   }
 
   suggestion(term: string): void {
-    this.showNotification = false;
+    this.fillNotificationError(false, '');
     //TDOO: suggestion
+  }
+
+  fillNotificationError(show: boolean, value: string, message?: string): void {
+    message = message || 'No se emcontro nada, con esta busqueda';
+    this.notificationError = {
+      message,
+      show,
+      value,
+    };
   }
 }

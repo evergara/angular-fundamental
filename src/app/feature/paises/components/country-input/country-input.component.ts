@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, Input } from '@angular/core';
 import { debounceTime, Subject } from 'rxjs';
 
 @Component({
@@ -7,6 +7,7 @@ import { debounceTime, Subject } from 'rxjs';
   styleUrls: ['./country-input.component.scss'],
 })
 export class CountryInputComponent implements OnInit {
+  @Input('placeholder_search') placeholderSearch:string;
   @Output() onSearchEnter: EventEmitter<string> = new EventEmitter();
   @Output() onDebounce: EventEmitter<string> = new EventEmitter();
   term: string;
@@ -15,6 +16,7 @@ export class CountryInputComponent implements OnInit {
 
   constructor() {
     this.term = '';
+    this.placeholderSearch = ''
   }
 
   ngOnInit(): void {

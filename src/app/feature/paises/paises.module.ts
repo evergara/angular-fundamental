@@ -11,6 +11,8 @@ import { ByRegionComponent } from './pages/by-region/by-region.component';
 import { SeeCountryComponent } from './pages/see-country/see-country.component';
 import { CountryTableComponent } from './components/country-table/country-table.component';
 import { CountryInputComponent } from './components/country-input/country-input.component';
+import { CountryErrorComponent } from './components/country-error/country-error.component';
+import { CountryTitlePageComponent } from './components/country-title-page/country-title-page.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { CountryInputComponent } from './components/country-input/country-input.
     SeeCountryComponent,
     CountryTableComponent,
     CountryInputComponent,
+    CountryErrorComponent,
+    CountryTitlePageComponent,
   ],
   imports: [
     CommonModule,
