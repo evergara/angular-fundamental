@@ -30,4 +30,9 @@ export class ByCountriesComponent {
       }
     );
   }
+
+  suggestion(term: string): void {
+    this.showNotification = false;
+    //TDOO: suggestion
+  }
 }

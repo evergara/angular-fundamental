@@ -1,8 +1,9 @@
-<p>by-countries works!</p>
-
 <div class="row">
   <div class="col">
-    <app-country-input (onSearchEnter)="search($event)"></app-country-input>
+    <app-country-input
+      (onSearchEnter)="search($event)"
+      (onDebounce)="suggestion($event)"
+    ></app-country-input>
     <div
       *ngIf="showNotification"
       class="alert alert-danger d-flex align-items-center"
