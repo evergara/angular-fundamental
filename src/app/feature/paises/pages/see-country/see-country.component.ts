@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CountriesService } from '@feature/paises/shared/services/countries.service';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-see-country',
@@ -14,11 +15,16 @@ export class SeeCountryComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoure.params.subscribe(({ id }) => {
-      console.log({ id });
-      this.countriesService.getCountryByAlpha(id).subscribe((country) => {
+    this.activatedRoure.params
+      .pipe(switchMap(({ id }) => this.countriesService.getCountryByAlpha(id)))
+      .subscribe((country) => {
         console.log(country);
       });
-    });
+    // this.activatedRoure.params.subscribe(({ id }) => {
+    //   console.log({ id });
+    //   this.countriesService.getCountryByAlpha(id).subscribe((country) => {
+    //     console.log(country);
+    //   });
+    // });
   }
 }
