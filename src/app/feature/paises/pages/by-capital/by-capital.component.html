@@ -1,1 +1,22 @@
-<p>by-capital works!</p>
+<div class="row">
+  <div class="col">
+    <app-country-title-page [title]="title"></app-country-title-page>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <app-country-input
+      [placeholder_search]="placeholder_search"
+      (onSearchEnter)="search($event)"
+      (onDebounce)="suggestion($event)"
+    ></app-country-input>
+    <app-country-error
+      [notificationError]="notificationError"
+    ></app-country-error>
+  </div>
+</div>
+<div class="row" *ngIf="countries.length > 0">
+  <div class="col">
+    <app-country-table [transfer_table]="countries"></app-country-table>
+  </div>
+</div>

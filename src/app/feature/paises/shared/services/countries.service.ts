@@ -15,4 +15,9 @@ export class CountriesService {
     const url = `${this.apiUrl}/name/${searchCountry}`;
     return this.http.get<Country[]>(url);
   }
+
+  searchCapital(capitalToSearch: string) {
+    const url = `${this.apiUrl}/capital/${capitalToSearch}`;
+    return this.http.get<Country[]>(url);
+  }
 }
