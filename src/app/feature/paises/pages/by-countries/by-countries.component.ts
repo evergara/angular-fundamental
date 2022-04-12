@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Country } from '@feature/paises/shared/interface/county';
 import { CountriesService } from '@feature/paises/shared/services/countries.service';
 
 @Component({
@@ -9,17 +10,19 @@ import { CountriesService } from '@feature/paises/shared/services/countries.serv
 export class ByCountriesComponent {
   countryToSearch: string;
   showNotification: boolean;
+  countries: Country[];
 
   constructor(private countriesService: CountriesService) {
     this.countryToSearch = '';
     this.showNotification = false;
+    this.countries = [];
   }
 
   search(): void {
     this.showNotification = false;
     this.countriesService.searchCountry(this.countryToSearch).subscribe(
-      (resp) => {
-        console.log(resp);
+      (countries) => {
+        this.countries = countries;
       },
       (err) => {
         this.showNotification = true;

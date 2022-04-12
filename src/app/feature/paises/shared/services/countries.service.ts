@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { Country } from '../interface/county';
 
 @Injectable({
   providedIn: 'root',
@@ -10,8 +11,8 @@ export class CountriesService {
 
   constructor(private http: HttpClient) {}
 
-  searchCountry(searchCountry: string): Observable<any> {
+  searchCountry(searchCountry: string): Observable<Country[]> {
     const url = `${this.apiUrl}/name/${searchCountry}`;
-    return this.http.get(url);
+    return this.http.get<Country[]>(url);
   }
 }
