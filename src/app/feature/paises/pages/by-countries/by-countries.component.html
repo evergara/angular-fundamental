@@ -2,18 +2,7 @@
 
 <div class="row">
   <div class="col">
-    <article>
-      <form action="" autocomplete="off" (ngSubmit)="search()">
-        <input
-          type="text"
-          name="search"
-          class="form-control"
-          placeholder="Buscar pais..."
-          [(ngModel)]="countryToSearch"
-        />
-      </form>
-    </article>
-    <hr />
+    <app-country-input (onSearchEnter)="search($event)"></app-country-input>
     <div
       *ngIf="showNotification"
       class="alert alert-danger d-flex align-items-center"
@@ -26,38 +15,8 @@
     </div>
   </div>
 </div>
-<div class="row">
+<div class="row" *ngIf="countries.length > 0">
   <div class="col">
-    <article *ngIf="countries.length > 0">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Bandera</th>
-            <th>Nombre</th>
-            <th>Poblaciòn</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let country of countries; index as i">
-            <td>{{ i + 1 }}</td>
-            <td>
-              {{ country.flag }}
-              <!-- <img
-                src="{{ country.flag }}"
-                class="small-flag"
-                alt="ountry.name.common"
-              /> -->
-            </td>
-            <td>{{ country.name.common }}</td>
-            <td>{{ country.population | number }}</td>
-            <td>
-              <a [routerLink]="['/country/', country.cca2]"> ver pais ...</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </article>
+    <app-country-table [transfer_table]="countries"></app-country-table>
   </div>
 </div>

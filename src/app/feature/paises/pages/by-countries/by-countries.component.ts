@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Country } from '@feature/paises/shared/interface/county';
+import { Country } from '@feature/paises/shared/interfaces/county';
 import { CountriesService } from '@feature/paises/shared/services/countries.service';
 
 @Component({
@@ -18,8 +18,9 @@ export class ByCountriesComponent {
     this.countries = [];
   }
 
-  search(): void {
+  search(term: string): void {
     this.showNotification = false;
+    this.countryToSearch = term;
     this.countriesService.searchCountry(this.countryToSearch).subscribe(
       (countries) => {
         this.countries = countries;
