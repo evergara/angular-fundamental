@@ -30,4 +30,9 @@ export class CountriesService {
     const url = `${this.apiUrl}/region/${region}`;
     return this.http.get<Country[]>(url);
   }
+
+  searchRegionBloc(blocCode: string) {
+    const url = `https://restcountries.com/v2/regionalbloc/${blocCode}`;
+    return this.http.get<Country[]>(url);
+  }
 }

@@ -1,1 +1,23 @@
-<p>by-region-bloc works!</p>
+<h3>
+  Buscar por Region - <small>{{ regionActiva | titlecase }}</small>
+</h3>
+<hr />
+<h5>Selecione la region</h5>
+
+<div class="row">
+  <div class="col">
+    <button
+      [class]="getClassCSS(region)"
+      *ngFor="let region of regions"
+      (click)="activarRegion(region)"
+    >
+      {{ region | titlecase }}
+    </button>
+  </div>
+</div>
+<hr />
+<div class="row" *ngIf="countries.length > 0">
+  <div class="col">
+    <app-country-table [transfer_table]="countries"></app-country-table>
+  </div>
+</div>

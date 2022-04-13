@@ -19,6 +19,7 @@ export class ByRegionComponent {
   }
 
   activarRegion(region: string): void {
+    if (this.regionActiva === region) return;
     this.regionActiva = region;
     this.countriesService.searchRegion(region).subscribe((countries) => {
       this.countries = countries;
