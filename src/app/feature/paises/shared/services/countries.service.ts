@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Country } from '../interfaces/county';
 
@@ -10,6 +10,10 @@ export class CountriesService {
   private apiUrl = 'https://restcountries.com/v3.1';
 
   constructor(private http: HttpClient) {}
+
+  get httpParams(): HttpParams {
+    return new HttpParams().set('fields', 'name,capital,population,flag,cca2');
+  }
 
   searchCountry(searchCountry: string): Observable<Country[]> {
     const url = `${this.apiUrl}/name/${searchCountry}`;
@@ -33,6 +37,6 @@ export class CountriesService {
 
   searchRegionBloc(blocCode: string) {
     const url = `https://restcountries.com/v2/regionalbloc/${blocCode}`;
-    return this.http.get<Country[]>(url);
+    return this.http.get<Country[]>(url, { params: this.httpParams });
   }
 }
