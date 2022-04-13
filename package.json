@@ -25,10 +25,14 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-builders/jest": "latest",
     "@angular-devkit/build-angular": "~13.1.4",
     "@angular/cli": "~13.1.4",
     "@angular/compiler-cli": "~13.1.0",
+    "@briebug/jest-schematic": "^4.0.0",
+    "@types/jest": "latest",
     "@types/node": "^12.11.1",
+    "jest": "latest",
     "typescript": "~4.5.2"
   }
 }
