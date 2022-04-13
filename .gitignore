@@ -40,3 +40,19 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+
+## test
+
+# e2e
+/e2e/*/node_modules
+/e2e/*/.pnp
+/e2e/*/.pnp.js
+!/e2e/presets/json/node_modules
+!/e2e/presets/js/node_modules
+/e2e/transform/*/coverage
+/e2e/transform/*/node_modules
+
+# coverage
+.nyc_output/
+coverage/
