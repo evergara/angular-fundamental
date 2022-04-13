@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+<h1>
+  {{ title | titlecase }}
+</h1>
+<h2>
+  {{ value | number }}
+</h2>
+<h3>
+  {{ person | json | uppercase }}
+</h3>
+<button (click)="showName()">Cambiar nombre</button>
