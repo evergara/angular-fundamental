@@ -8,6 +8,7 @@
       "@feature/*":["./src/app/feature/*"],
       "@shared/*": ["./src/app/shared/*"],
       "@environments/*": ["./src/environments/*"],
+      "@primeng/*": ["./src/app/prime-ng/*"],
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

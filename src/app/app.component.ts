@@ -7,15 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'angular-fundamental';
-  subTitle: string = 'learning angular';
-  value: number = 10000;
-  person = {
-    name: 'evergara',
-  };
-
-  showName(): void {
-    console.log(this.title);
-    console.log(this.value);
-    console.log(this.person);
-  }
 }
