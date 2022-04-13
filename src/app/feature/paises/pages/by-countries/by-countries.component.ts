@@ -12,12 +12,16 @@ export class ByCountriesComponent {
   title: string;
   countryToSearch: string;
   countries: Country[];
+  countriesSuggestion: Country[];
   notificationError?: NotificationError;
+  showSuggestion: boolean;
 
   constructor(private countriesService: CountriesService) {
     this.title = 'Pais';
     this.countryToSearch = '';
     this.countries = [];
+    this.countriesSuggestion = [];
+    this.showSuggestion = false;
   }
 
   search(term: string): void {
@@ -35,8 +39,18 @@ export class ByCountriesComponent {
   }
 
   suggestion(term: string): void {
+    this.countryToSearch = term;
+    this.showSuggestion = true;
     this.fillNotificationError(false, '');
-    //TDOO: suggestion
+    this.countriesService.searchCountry(term).subscribe(
+      (countries) => {
+        this.countriesSuggestion = countries.splice(0, 5);
+      },
+      (err) => {
+        this.countriesSuggestion = [];
+        this.showSuggestion = false;
+      }
+    );
   }
 
   fillNotificationError(show: boolean, value: string, message?: string): void {
@@ -46,5 +60,10 @@ export class ByCountriesComponent {
       show,
       value,
     };
+  }
+
+  searchSuggestion(): void {
+    this.showSuggestion = false;
+    this.search(this.countryToSearch);
   }
 }

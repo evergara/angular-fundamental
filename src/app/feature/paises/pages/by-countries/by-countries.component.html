@@ -10,11 +10,28 @@
       (onSearchEnter)="search($event)"
       (onDebounce)="suggestion($event)"
     ></app-country-input>
+    <ul *ngIf="showSuggestion" class="list-group">
+      <li
+        class="list-group-item list-group-item-action"
+        *ngFor="let country of countriesSuggestion"
+      >
+        <a class="nav-link" [routerLink]="['/country', country.cca2]">
+          {{ country.name.common }}
+        </a>
+      </li>
+      <li
+        class="list-group-item list-group-item-action"
+        (click)="searchSuggestion()"
+      >
+        <a class="nav-link"> Buscar "{{ countryToSearch }}" </a>
+      </li>
+    </ul>
     <app-country-error
       [notificationError]="notificationError"
     ></app-country-error>
   </div>
 </div>
+<hr />
 <div class="row" *ngIf="countries.length > 0">
   <div class="col">
     <app-country-table [transfer_table]="countries"></app-country-table>
