@@ -4,6 +4,7 @@ import { ByCountriesComponent } from './pages/by-countries/by-countries.componen
 import { ByRegionComponent } from './pages/by-region/by-region.component';
 import { ByCapitalComponent } from './pages/by-capital/by-capital.component';
 import { SeeCountryComponent } from './pages/see-country/see-country.component';
+import { ByRegionBlocComponent } from './pages/by-region-bloc/by-region-bloc.component';
 
 const PAISES_HOME = 'countries';
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'region',
     component: ByRegionComponent,
+  },
+  {
+    path: 'region-bloc',
+    component: ByRegionBlocComponent,
   },
   {
     path: 'capital',
