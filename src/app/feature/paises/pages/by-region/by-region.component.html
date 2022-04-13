@@ -11,7 +11,13 @@
       *ngFor="let region of regions"
       (click)="activarRegion(region)"
     >
-      {{ region }}
+      {{ region | titlecase }}
     </button>
+  </div>
+</div>
+<hr />
+<div class="row" *ngIf="countries.length > 0">
+  <div class="col">
+    <app-country-table [transfer_table]="countries"></app-country-table>
   </div>
 </div>

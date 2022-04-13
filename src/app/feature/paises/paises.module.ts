@@ -13,6 +13,7 @@ import { CountryTableComponent } from './components/country-table/country-table.
 import { CountryInputComponent } from './components/country-input/country-input.component';
 import { CountryErrorComponent } from './components/country-error/country-error.component';
 import { CountryTitlePageComponent } from './components/country-title-page/country-title-page.component';
+import { ByRegionBlocComponent } from './pages/by-region-bloc/by-region-bloc.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CountryTitlePageComponent } from './components/country-title-page/count
     CountryInputComponent,
     CountryErrorComponent,
     CountryTitlePageComponent,
+    ByRegionBlocComponent,
   ],
   imports: [
     CommonModule,

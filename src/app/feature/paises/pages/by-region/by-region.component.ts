@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Country } from '@feature/paises/shared/interfaces/county';
 import { CountriesService } from '../../shared/services/countries.service';
 
 @Component({
@@ -9,20 +10,18 @@ import { CountriesService } from '../../shared/services/countries.service';
 export class ByRegionComponent {
   regions: string[];
   regionActiva: string;
+  countries: Country[];
 
   constructor(private countriesService: CountriesService) {
     this.regions = ['africa', 'americas', 'asia', 'europe', 'oceania'];
     this.regionActiva = '';
+    this.countries = [];
   }
 
   activarRegion(region: string): void {
     this.regionActiva = region;
-    alert(region);
-
-    //TODO: llamar servicios
-
     this.countriesService.searchRegion(region).subscribe((countries) => {
-      console.log(countries);
+      this.countries = countries;
     });
   }
 
