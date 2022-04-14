@@ -16,18 +16,30 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     this.itemsMenu = [
       {
-        label: 'File',
+        label: 'Pipes de Angular',
+        icon: 'pi pi-fw pi-desktop',
         items: [
-          { label: 'New', icon: 'pi pi-plus' },
-          { label: 'Open', icon: 'pi pi-download' },
+          {
+            label: 'Text and Date',
+            icon: 'pi pi-aling-left',
+            routerLink: ['/basic'],
+          },
+          {
+            label: 'Numbers',
+            icon: 'pi pi-dollar',
+            routerLink: ['/number'],
+          },
+          {
+            label: 'No common',
+            icon: 'pi pi-globe',
+            routerLink: ['/no-common'],
+          },
         ],
       },
       {
-        label: 'Edit',
-        items: [
-          { label: 'Undo', icon: 'pi pi-refresh' },
-          { label: 'Redo', icon: 'pi pi-repeat' },
-        ],
+        label: 'Pipes personalizados',
+        icon: 'pi pi-fw pi-cog',
+        items: [{ label: 'Sort', icon: 'pi pi-plus', routerLink: ['/sort'] }],
       },
     ];
   }
