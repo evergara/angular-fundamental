@@ -11,6 +11,14 @@
         <li>fecha personalizada | date: "ww/MM/YYYY, HH:mm:ss"</li>
         <li>fecha personalizada | date: "MMMM dd. yyyy, HH:mm:ss"</li>
       </ul>
+      <hr />
+      <ul>
+        <li>fecha | date: "long":"GMT-6"</li>
+        <li>fecha | date: "long":"GMT-4"</li>
+        <li>fecha | date: "long":"":"en"</li>
+        <li>fecha | date: "long":"":"fr"</li>
+        <li>fecha | date: "long":"":"es-CO"</li>
+      </ul>
       <ng-template pTemplate="footer">
         {{ operation_card }}
         <br />
@@ -27,6 +35,14 @@
         <li>{{ fecha | date: "long" }}</li>
         <li>{{ fecha | date: "ww/MM/YYYY, HH:mm:ss" }}</li>
         <li>{{ fecha | date: "MMMM dd. yyyy, HH:mm:ss" }}</li>
+      </ul>
+      <hr />
+      <ul>
+        <li>{{ fecha | date: "long":"GMT-6" }}</li>
+        <li>{{ fecha | date: "long":"GMT-4" }}</li>
+        <li>{{ fecha | date: "long":"":"en" }}</li>
+        <li>{{ fecha | date: "long":"":"fr" }}</li>
+        <li>{{ fecha | date: "long":"":"es-CO" }}</li>
       </ul>
       <ng-template pTemplate="footer">
         {{ operation_card | titlecase }}

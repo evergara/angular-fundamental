@@ -10,8 +10,10 @@ import { SharedModule } from '@shared/shared.module';
 
 //Cambiar el locale de la app
 import localeES from '@angular/common/locales/es-CO';
+import localeFR from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeES);
+registerLocaleData(localeFR);
 
 @NgModule({
   declarations: [AppComponent],

@@ -11,6 +11,7 @@ import { TitlePageComponent } from './components/title-page/title-page.component
 import { PipePageComponent } from './components/pipe-page/pipe-page.component';
 import { PipeBasicComponent } from './components/pipe-basic/pipe-basic.component';
 import { PipeDateComponent } from './components/pipe-date/pipe-date.component';
+import { PipeDecimalComponent } from './components/pipe-decimal/pipe-decimal.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PipeDateComponent } from './components/pipe-date/pipe-date.component';
     PipePageComponent,
     PipeBasicComponent,
     PipeDateComponent,
+    PipeDecimalComponent,
   ],
   exports: [BasicComponent, NoCommonComponent, NumberComponent, SortComponent],
   imports: [CommonModule, PrimeNgModule],
