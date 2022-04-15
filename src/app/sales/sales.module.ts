@@ -9,6 +9,8 @@ import { NumberComponent } from './pages/number/number.component';
 import { SortComponent } from './pages/sort/sort.component';
 import { TitlePageComponent } from './components/title-page/title-page.component';
 import { PipePageComponent } from './components/pipe-page/pipe-page.component';
+import { PipeBasicComponent } from './components/pipe-basic/pipe-basic.component';
+import { PipeDateComponent } from './components/pipe-date/pipe-date.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { PipePageComponent } from './components/pipe-page/pipe-page.component';
     SortComponent,
     TitlePageComponent,
     PipePageComponent,
+    PipeBasicComponent,
+    PipeDateComponent,
   ],
   exports: [BasicComponent, NoCommonComponent, NumberComponent, SortComponent],
   imports: [CommonModule, PrimeNgModule],

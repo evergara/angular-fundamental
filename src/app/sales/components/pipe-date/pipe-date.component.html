@@ -1,0 +1,38 @@
+<app-title-page [title]="title" [description]="description"></app-title-page>
+
+<article class="grid">
+  <div class="col-12 md:col-6 lg:col-6">
+    <p-card [header]="header" [subheader]="subheader">
+      <ul>
+        <li>fecha</li>
+        <li>fecha | date</li>
+        <li>fecha | date: 'short'</li>
+        <li>fecha | date: 'long'</li>
+        <li>fecha personalizada | date: "ww/MM/YYYY, HH:mm:ss"</li>
+        <li>fecha personalizada | date: "MMMM dd. yyyy, HH:mm:ss"</li>
+      </ul>
+      <ng-template pTemplate="footer">
+        {{ operation_card }}
+        <br />
+        <code> &#123;<span>&#123; var &#124; pipe &#125;</span>&#125; </code>
+      </ng-template>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-6 lg:col-6">
+    <p-card [header]="header" [subheader]="subheader">
+      <ul>
+        <li>{{ fecha }}</li>
+        <li>{{ fecha | date }}</li>
+        <li>{{ fecha | date: "short" }}</li>
+        <li>{{ fecha | date: "long" }}</li>
+        <li>{{ fecha | date: "ww/MM/YYYY, HH:mm:ss" }}</li>
+        <li>{{ fecha | date: "MMMM dd. yyyy, HH:mm:ss" }}</li>
+      </ul>
+      <ng-template pTemplate="footer">
+        {{ operation_card | titlecase }}
+        <br />
+        <code> &#123;<span>&#123; var &#124; date &#125;</span>&#125; </code>
+      </ng-template>
+    </p-card>
+  </div>
+</article>

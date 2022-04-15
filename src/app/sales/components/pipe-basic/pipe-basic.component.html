@@ -1,0 +1,39 @@
+<app-title-page [title]="title" [description]="description"></app-title-page>
+
+<article class="grid">
+  <div class="col-12 md:col-6 lg:col-3">
+    <p-card header="Original text" [subheader]="title_card">
+      {{ text_card }}
+      <ng-template pTemplate="footer">
+        {{ operation_card }}
+        <br />
+        <code> &#123;<span>&#123; var &#124; pipe &#125;</span>&#125; </code>
+      </ng-template>
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-6 lg:col-3">
+    <p-card header="Pipe lowercase" [subheader]="title_card | lowercase">
+      {{ text_card | lowercase }}
+      <ng-template pTemplate="footer">
+        {{ operation_card | lowercase }}
+        <br />
+        <code>
+          &#123;<span>&#123; var &#124; lowercase &#125;</span>&#125;
+        </code>
+      </ng-template>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3">
+    <p-card header="Pipe titlecase" [subheader]="title_card | titlecase">
+      {{ text_card | titlecase }}
+      <ng-template pTemplate="footer">
+        {{ operation_card | titlecase }}
+        <br />
+        <code>
+          &#123;<span>&#123; var &#124; titlecase &#125;</span>&#125;
+        </code>
+      </ng-template>
+    </p-card>
+  </div>
+</article>
