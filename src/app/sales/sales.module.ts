@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { PrimeNgModule } from '../prime-ng/prime-ng.module';
+
 import { BasicComponent } from './pages/basic/basic.component';
 import { NoCommonComponent } from './pages/no-common/no-common.component';
 import { NumberComponent } from './pages/number/number.component';
 import { SortComponent } from './pages/sort/sort.component';
+import { TitlePageComponent } from './components/title-page/title-page.component';
+import { PipePageComponent } from './components/pipe-page/pipe-page.component';
 
 @NgModule({
   declarations: [
@@ -11,8 +16,10 @@ import { SortComponent } from './pages/sort/sort.component';
     NoCommonComponent,
     NumberComponent,
     SortComponent,
+    TitlePageComponent,
+    PipePageComponent,
   ],
   exports: [BasicComponent, NoCommonComponent, NumberComponent, SortComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, PrimeNgModule],
 })
 export class SalesModule {}

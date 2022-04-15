@@ -1,0 +1,10 @@
+<p-card [header]="dataPipe.header" [subheader]="dataPipe.subheader">
+  {{ dataPipe.body }}
+  <ng-template pTemplate="footer">
+    {{ dataPipe.operation }}
+    <br />
+    <code>
+      &#123;<span>&#123; var &#124; dataPipe.pipe &#125;</span>&#125;
+    </code>
+  </ng-template>
+</p-card>
