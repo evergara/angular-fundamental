@@ -1,0 +1,55 @@
+<app-title-page [title]="title" [description]="description"></app-title-page>
+
+<article class="grid">
+  <div class="col-12 md:col-4 lg:col-3">
+    <p-card [header]="header" [subheader]="subheader">
+      <p>Ventas netas: {{ netSales }}</p>
+      <p>porcentajes: {{ Percentages }}</p>
+      <ng-template pTemplate="footer">
+        {{ operation_card | titlecase }}
+        <br />
+        <code>
+          &#123;<span>&#123; var &#124; sin pipe &#125;</span>&#125;
+        </code>
+      </ng-template>
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4 lg:col-3">
+    <p-card [header]="header" [subheader]="subheader">
+      <p>Ventas netas: {{ netSales }}</p>
+      <p>porcentajes: {{ Percentages | percent }}</p>
+      <ng-template pTemplate="footer">
+        {{ operation_card | titlecase }}
+        <br />
+        <code> &#123;<span>&#123; var &#124; percent &#125;</span>&#125; </code>
+      </ng-template>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4 lg:col-3">
+    <p-card [header]="header" [subheader]="subheader">
+      <p>Ventas netas: {{ netSales }}</p>
+      <p>porcentajes: {{ Percentages | percent: "2.2-2" }}</p>
+      <ng-template pTemplate="footer">
+        {{ operation_card | titlecase }}
+        <br />
+        <code>
+          &#123;<span>&#123;var&#124;percent:"2.2-2"&#125;</span>&#125;
+        </code>
+      </ng-template>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4 lg:col-3">
+    <p-card [header]="header" [subheader]="subheader">
+      <p>Ventas netas: {{ netSales }}</p>
+      <p>porcentajes: {{ Percentages | percent: "1.2-4" }}</p>
+      <ng-template pTemplate="footer">
+        {{ operation_card | titlecase }}
+        <br />
+        <code>
+          &#123;<span>&#123;var&#124;percent:"1.2-4"&#125;</span>&#125;
+        </code>
+      </ng-template>
+    </p-card>
+  </div>
+</article>

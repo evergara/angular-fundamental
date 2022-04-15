@@ -1,0 +1,58 @@
+<app-title-page [title]="title" [description]="description"></app-title-page>
+
+<article class="grid">
+  <div class="col-12 md:col-4 lg:col-3">
+    <p-card [header]="header" [subheader]="subheader">
+      <p>Ventas netas: {{ netSales }}</p>
+      <p>porcentajes: {{ Percentages }}</p>
+      <ng-template pTemplate="footer">
+        {{ operation_card | titlecase }}
+        <br />
+        <code>
+          &#123;<span>&#123; var &#124; sin pipe &#125;</span>&#125;
+        </code>
+      </ng-template>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4 lg:col-3">
+    <p-card [header]="header" [subheader]="subheader">
+      <p>Ventas netas: {{ netSales | currency }}</p>
+      <p>porcentajes: {{ Percentages }}</p>
+      <ng-template pTemplate="footer">
+        {{ operation_card | titlecase }}
+        <br />
+        <code>
+          &#123;<span>&#123; var &#124; currency &#125;</span>&#125;
+        </code>
+      </ng-template>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4 lg:col-3">
+    <p-card [header]="header" [subheader]="subheader">
+      <p>Ventas netas: {{ netSales | currency: "COP" }}</p>
+      <p>porcentajes: {{ Percentages }}</p>
+      <ng-template pTemplate="footer">
+        {{ operation_card | titlecase }}
+        <br />
+        <code>
+          &#123;<span>&#123;var&#124;currency:'COP'&#125;</span>&#125;
+        </code>
+      </ng-template>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4 lg:col-3">
+    <p-card [header]="header" [subheader]="subheader">
+      <p>Ventas netas: {{ netSales | currency: "COP":"symbol":"1.3-4" }}</p>
+      <p>porcentajes: {{ Percentages }}</p>
+      <ng-template pTemplate="footer">
+        {{ operation_card | titlecase }}
+        <br />
+        <code>
+          &#123;<span
+            >&#123;var&#124;currency: "COP":"symbol":"1.3-4"&#125;</span
+          >&#125;
+        </code>
+      </ng-template>
+    </p-card>
+  </div>
+</article>

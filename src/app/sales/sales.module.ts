@@ -12,6 +12,8 @@ import { PipePageComponent } from './components/pipe-page/pipe-page.component';
 import { PipeBasicComponent } from './components/pipe-basic/pipe-basic.component';
 import { PipeDateComponent } from './components/pipe-date/pipe-date.component';
 import { PipeDecimalComponent } from './components/pipe-decimal/pipe-decimal.component';
+import { PipeCurrencyComponent } from './components/pipe-currency/pipe-currency.component';
+import { PipePercentComponent } from './components/pipe-percent/pipe-percent.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { PipeDecimalComponent } from './components/pipe-decimal/pipe-decimal.com
     PipeBasicComponent,
     PipeDateComponent,
     PipeDecimalComponent,
+    PipeCurrencyComponent,
+    PipePercentComponent,
   ],
   exports: [BasicComponent, NoCommonComponent, NumberComponent, SortComponent],
   imports: [CommonModule, PrimeNgModule],
