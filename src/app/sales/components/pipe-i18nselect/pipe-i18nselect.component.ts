@@ -8,6 +8,19 @@ import { Component, Input } from '@angular/core';
 export class PipeI18nselectComponent {
   isToggleable: boolean = true;
   title: string = 'i18nSelect';
-  body: string =
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe libero excepturi repellendus debitis autem accusantium consequuntur nemo sint nesciunt aspernatur similique, quisquam ullam minus sit qui dicta ex! Rem, maiores.';
+
+  person = {
+    name: 'Brilis',
+    genero: 'masculino',
+  };
+
+  person2 = {
+    name: 'Susana',
+    genero: 'femenina',
+  };
+
+  invitacionMapa = {
+    masculino: 'Invitarlo',
+    femenina: 'Invitarla',
+  };
 }

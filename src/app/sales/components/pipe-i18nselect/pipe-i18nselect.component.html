@@ -1,4 +1,9 @@
 <p-fieldset [toggleable]="isToggleable">
   <ng-template pTemplate="header">{{ title }}</ng-template>
-  {{ body }}
+  Saludos "{{ person.name }}" vergara, es un placer
+  {{ person.genero | i18nSelect: invitacionMapa }}, a esta reunion.
+  <br />
+  <br />
+  Saludos "{{ person2.name }}" vergara, es un placer
+  {{ person2.genero | i18nSelect: invitacionMapa }}, a esta reunion.
 </p-fieldset>
