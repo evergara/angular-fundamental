@@ -8,6 +8,12 @@ import { Component, Input } from '@angular/core';
 export class PipeI18npluralComponent {
   isToggleable: boolean = true;
   title: string = 'i18nPlural';
-  body: string =
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe libero excepturi repellendus debitis autem accusantium consequuntur nemo sint nesciunt aspernatur similique, quisquam ullam minus sit qui dicta ex! Rem, maiores.';
+  clients: string[] = ['Brayan', 'Brilis', 'Maria', 'Petra'];
+
+  clientsMap = {
+    '=0': 'no tenemos clientes esperando',
+    '=1': 'tenemos # cliente esperando',
+    '=2': 'tenemos # clientes esperando',
+    other: 'tenemos # clientes esperando',
+  };
 }

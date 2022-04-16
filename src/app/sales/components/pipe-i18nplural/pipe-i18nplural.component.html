@@ -1,4 +1,4 @@
 <p-fieldset [toggleable]="isToggleable">
   <ng-template pTemplate="header">{{ title }}</ng-template>
-  {{ body }}
+  Actualmente, {{ clients.length | i18nPlural: clientsMap }}
 </p-fieldset>
