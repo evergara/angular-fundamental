@@ -1,4 +1,31 @@
 <p-fieldset [toggleable]="isToggleable">
   <ng-template pTemplate="header">{{ title }}</ng-template>
   Actualmente, {{ clients.length | i18nPlural: clientsMap }}
+  <hr />
+  <br />
+  <div class="field col-12">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">
+        <i class="pi pi-user"></i>
+      </span>
+      <span class="p-float-label">
+        <input
+          type="text"
+          id="client"
+          pInputText
+          [(ngModel)]="value"
+          (keyup.enter)="addName()"
+        />
+        <label for="client">client</label>
+      </span>
+    </div>
+  </div>
+  <button
+    pButton
+    pRipple
+    type="button"
+    icon="pi pi-times"
+    class="p-button-rounded p-button-danger p-button-text"
+    (click)="removeClient()"
+  ></button>
 </p-fieldset>
