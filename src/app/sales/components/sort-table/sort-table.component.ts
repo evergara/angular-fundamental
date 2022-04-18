@@ -1,15 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { Heroe } from '../../interfaces/heroe.interface';
 
 @Component({
   selector: 'app-sort-table',
   templateUrl: './sort-table.component.html',
-  styleUrls: ['./sort-table.component.scss']
+  styleUrls: ['./sort-table.component.scss'],
 })
-export class SortTableComponent implements OnInit {
+export class SortTableComponent {
+  bySort: string = '';
+  heroes: Heroe[] = [
+    {
+      name: 'superman',
+      fly: true,
+      color: 2,
+    },
+    {
+      name: 'Batman',
+      fly: false,
+      color: 1,
+    },
+    {
+      name: 'Robin',
+      fly: false,
+      color: 3,
+    },
+    {
+      name: 'Daredevil',
+      fly: false,
+      color: 0,
+    },
+    {
+      name: 'Linterna verde',
+      fly: true,
+      color: 3,
+    },
+  ];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  bySorts(option: string): void {
+    this.bySort = option;
   }
-
 }
