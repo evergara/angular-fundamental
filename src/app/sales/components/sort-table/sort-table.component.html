@@ -44,3 +44,25 @@
     </tr>
   </ng-template>
 </p-table>
+<br />
+<hr />
+<p-table [value]="heroes | slice: 0">
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="name">
+        Nombre <p-sortIcon field="name"></p-sortIcon>
+      </th>
+      <th pSortableColumn="fly">Vuela <p-sortIcon field="fly"></p-sortIcon></th>
+      <th pSortableColumn="color">
+        Color <p-sortIcon field="color"></p-sortIcon>
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-heroe>
+    <tr>
+      <td>{{ heroe.name | titlecase }}</td>
+      <td>{{ heroe.fly }}</td>
+      <td>{{ heroe.color }}</td>
+    </tr>
+  </ng-template>
+</p-table>
