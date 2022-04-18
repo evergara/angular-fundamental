@@ -1,0 +1,16 @@
+<p-fieldset [toggleable]="isToggleable">
+  <ng-template pTemplate="header"
+    >Pipe personalizado - (lowercase or uppercase)</ng-template
+  >
+  Actualmente, mi palabra esta en {{ "DESorden" | changestringwithparams }} -
+  DESorden (sin argumneto uppercase)
+  <br />
+  Actualmente, mi palabra esta en
+  {{ "DESorden" | changestringwithparams: false }} - DESorden (con argumneto
+  false lowercase)
+
+  <br />
+  Actualmente, mi palabra esta en
+  {{ "DESorden" | changestringwithparams: true }} - DESorden (con argumneto true
+  uppercase)
+</p-fieldset>

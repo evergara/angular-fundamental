@@ -17,6 +17,14 @@ import { PipeCurrencyComponent } from './components/pipe-currency/pipe-currency.
 import { PipePercentComponent } from './components/pipe-percent/pipe-percent.component';
 import { PipeI18nselectComponent } from './components/pipe-i18nselect/pipe-i18nselect.component';
 import { PipeI18npluralComponent } from './components/pipe-i18nplural/pipe-i18nplural.component';
+import { PipeCustomizedComponent } from './components/pipe-customized/pipe-customized.component';
+import { MyUppercasePipe } from './pipes/my-uppercase.pipe';
+import { MyLowercasePipe } from './pipes/my-lowercase.pipe';
+import { PipeCustomized2Component } from './components/pipe-customized2/pipe-customized2.component';
+import { PipeCustomizedWithParamsComponent } from './components/pipe-customized-with-params/pipe-customized-with-params.component';
+import { ChangeStringWithParamsPipe } from './pipes/change-string-with-params.pipe';
+import { SortPipe } from './pipes/sort.pipe';
+import { SortTableComponent } from './components/sort-table/sort-table.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +41,14 @@ import { PipeI18npluralComponent } from './components/pipe-i18nplural/pipe-i18np
     PipePercentComponent,
     PipeI18nselectComponent,
     PipeI18npluralComponent,
+    PipeCustomizedComponent,
+    MyUppercasePipe,
+    MyLowercasePipe,
+    PipeCustomized2Component,
+    PipeCustomizedWithParamsComponent,
+    ChangeStringWithParamsPipe,
+    SortPipe,
+    SortTableComponent,
   ],
   exports: [BasicComponent, NoCommonComponent, NumberComponent, SortComponent],
   imports: [CommonModule, FormsModule, PrimeNgModule],
