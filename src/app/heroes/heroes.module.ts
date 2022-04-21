@@ -5,13 +5,15 @@ import { HeroesRoutingModule } from './heroes-routing.module';
 import { HeroeAddComponent } from './pages/heroe-add/heroe-add.component';
 import { HeroesComponent } from './pages/heroes/heroes.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
+import { HeroesSearchComponent } from './pages/heroes-search/heroes-search.component';
 
 
 @NgModule({
   declarations: [
     HeroeAddComponent,
     HeroesComponent,
-    HeroeComponent
+    HeroeComponent,
+    HeroesSearchComponent
   ],
   imports: [
     CommonModule,
