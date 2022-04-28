@@ -3,17 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { HeroeAddComponent } from './pages/heroe-add/heroe-add.component';
-import { HeroesComponent } from './pages/heroes/heroes.component';
+import { HeroesListComponent } from './pages/heroes/heroes-list.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
 import { HeroesSearchComponent } from './pages/heroes-search/heroes-search.component';
+import { HeroesComponent } from './heroes.component';
 
 
 @NgModule({
   declarations: [
     HeroeAddComponent,
-    HeroesComponent,
+    HeroesListComponent,
     HeroeComponent,
-    HeroesSearchComponent
+    HeroesSearchComponent,
+    HeroesComponent
   ],
   imports: [
     CommonModule,
