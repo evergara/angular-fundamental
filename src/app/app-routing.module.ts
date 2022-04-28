@@ -5,7 +5,7 @@ import { Page404Component } from './shared/components/page404/page404.component'
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'heroes',
     loadChildren: () =>
       import('./heroes/heroes.module').then((mod) => mod.HeroesModule),
   },
