@@ -9,6 +9,7 @@ import { HeroeComponent } from './pages/heroe/heroe.component';
 import { HeroesSearchComponent } from './pages/heroes-search/heroes-search.component';
 import { HeroesComponent } from './heroes.component';
 import { MaterialModule } from '../material/material.module';
+import { HeroeCardComponent } from './components/heroe-card/heroe-card.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MaterialModule } from '../material/material.module';
     HeroeComponent,
     HeroesSearchComponent,
     HeroesComponent,
+    HeroeCardComponent,
   ],
   imports: [
     CommonModule,

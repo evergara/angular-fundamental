@@ -5,6 +5,11 @@ import { Page404Component } from './shared/components/page404/page404.component'
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'heroes',
+    pathMatch: 'full',
+  },
+  {
     path: 'heroes',
     loadChildren: () =>
       import('./heroes/heroes.module').then((mod) => mod.HeroesModule),
