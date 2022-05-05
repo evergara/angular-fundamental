@@ -7,9 +7,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class HeroesService {
+  
   constructor(private http: HttpClient) {}
 
-  getHoroes(): Observable<Heroe[]> {
+  heroes(): Observable<Heroe[]> {
     return this.http.get<Heroe[]>('http://localhost:3000/heroes');
+  }
+
+  heroeById(heroeId: string): Observable<Heroe> {
+    return this.http.get<Heroe>('http://localhost:3000/heroes/'+heroeId)    
   }
 }
