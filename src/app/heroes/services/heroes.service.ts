@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Heroe } from '../interfaces/heroe';
+import { Heroe, Publisher } from '../interfaces/heroe';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
@@ -23,4 +23,9 @@ export class HeroesService {
   heroesSearch(query: string): Observable<Heroe[]> {
     return this.http.get<Heroe[]>(`${this.baseUrl}/heroes?q=${query}&_limit=7`);
   }
+
+  publisher(): Observable<Publisher[]> {
+    return this.http.get<Publisher[]>(`${this.baseUrl}/publisher`);
+  }
+
 }
