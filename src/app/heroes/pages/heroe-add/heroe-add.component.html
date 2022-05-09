@@ -1,39 +1,31 @@
-<h2>Agregar Heroe <small>ADS</small></h2>
+<h2>{{ title }} <small>ADS</small></h2>
 
-<section fxLayout="row" fxLayoutGap="40px">
+<section fxLayout="row" fxLayoutGap="40px" fxLayout.xs="column">
   <article fxFlex="50" fxLayout="column">
-    <div fxFlex="100" fxLayoutGap="10px">
-      <mat-form-field fxFlex="100" class="example-full-width" appearance="fill">
-        <mat-label>Super heroe</mat-label>
-        <input
-          matInput
-          name="name"
-          id="name"
-          placeholder="name super heroe"
-          value=""
-          required
-        />
-      </mat-form-field>
-      <mat-form-field fxFlex="100" class="example-full-width" appearance="fill">
-        <mat-label>Alter ego</mat-label>
-        <input
-          matInput
-          name="alter_ego"
-          id="alter_ego"
-          placeholder="Alter ego"
-          value=""
-          required
-        />
-      </mat-form-field>
-    </div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Super heroe</mat-label>
+      <input
+        matInput
+        [(ngModel)]="heroe.superhero"
+        placeholder="name super heroe"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Alter ego</mat-label>
+      <input
+        matInput
+        [(ngModel)]="heroe.alter_ego"
+        placeholder="Alter ego"
+        required
+      />
+    </mat-form-field>
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Primera aparicion</mat-label>
       <input
         matInput
-        name="first_appearance"
-        id="first_appearance"
+        [(ngModel)]="heroe.first_appearance"
         placeholder="first appearance"
-        value=""
         required
       />
     </mat-form-field>
@@ -41,21 +33,20 @@
       <mat-label>Characters</mat-label>
       <input
         matInput
-        name="characters"
-        id="characters"
+        [(ngModel)]="heroe.characters"
         placeholder="characters"
-        value=""
         required
       />
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Creador</mat-label>
-      <mat-select [(value)]="publisherID">
-        <mat-option>None</mat-option>
-        <mat-option *ngFor="let publisher of publishers" value="publisher.id">{{
-          publisher.name
-        }}</mat-option>
+      <mat-select [(value)]="heroe.publisher" required>
+        <mat-option
+          *ngFor="let publisher of publishers"
+          [value]="publisher.id"
+          >{{ publisher.name }}</mat-option
+        >
       </mat-select>
     </mat-form-field>
 
@@ -63,18 +54,29 @@
       <mat-label>Imagen</mat-label>
       <input
         matInput
-        name="url"
-        id="url"
+        [(ngModel)]="heroe.alt_img"
         placeholder="url de la imagen"
-        value=""
         required
       />
     </mat-form-field>
-
-    <button mat-raised-button color="primary">
-      <mat-icon>edit</mat-icon>
-      Guardar
-    </button>
+    <div fxLayout>
+      <button mat-raised-button color="primary" (click)="addHeroe()">
+        <mat-icon>edit</mat-icon>
+        Guardar
+      </button>
+      <span class="space"></span>
+      <button
+        *ngIf="heroe.id"
+        mat-raised-button
+        color="warn"
+        (click)="deletecHeroe()"
+      >
+        <mat-icon>remove</mat-icon>
+        Borrar
+      </button>
+    </div>
   </article>
-  <article fxFlex="50">2</article>
+  <article fxFlex="50">
+    <img [src]="heroe | urlImagen" alt="{{ heroe.superhero }}" />
+  </article>
 </section>
