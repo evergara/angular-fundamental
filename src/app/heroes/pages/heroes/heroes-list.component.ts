@@ -15,9 +15,10 @@ export class HeroesListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.heroesServices.heroes().subscribe(heroes => {
-      this.heroes = heroes;
-      console.log(this.heroes);
+    this.heroesServices.heroes().subscribe({
+      next: (heroes) => (this.heroes = heroes),
+      error: () => console.log('Este es mi mundo'),
+      complete: () => console.log('Ha terminado'),
     });
   }
 }
