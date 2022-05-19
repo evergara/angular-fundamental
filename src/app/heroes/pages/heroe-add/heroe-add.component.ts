@@ -4,6 +4,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { HeroesService } from '../../services/heroes.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmHeroeComponent } from '../../components/confirm-heroe/confirm-heroe.component';
 
 @Component({
   selector: 'app-heroe-add',
@@ -22,7 +24,8 @@ export class HeroeAddComponent implements OnInit {
     private heroeServices: HeroesService,
     private activatedRoute: ActivatedRoute,
     private route: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    public dialog: MatDialog
   ) {
     this.title = 'Nuevo heroe';
     this.publishers = [];
@@ -88,10 +91,27 @@ export class HeroeAddComponent implements OnInit {
   }
 
   deletecHeroe(): void {
+   const dialog = this.dialog.open(ConfirmHeroeComponent, {
+      width: '50%',
+      data: this.heroe
+    });
+
+    dialog.afterClosed().subscribe({
+      next: (result) => {
+        if(result == true){
+          this.heroeServices.deleteHeroe(this.heroe.id!).subscribe((resp) => {
+            this.openSnackBar('Registro eliminado');
+            this.route.navigate(['/heroes']);
+          });
+        }
+      }
+    });
+    /**
     this.heroeServices.deleteHeroe(this.heroe.id!).subscribe((resp) => {
       this.openSnackBar('Registro eliminado');
       this.route.navigate(['/heroes']);
     });
+    **/
   }
 
   openSnackBar(messaage: string): void {
